@@ -1,0 +1,24 @@
+{
+    "name": "flaviosenos/routerx",
+    "description": "Uma biblioteca de roteamento PHP amigável e flexível.",
+    "type": "library",
+    "keywords": ["router", "routing", "php", "web", "api", "middleware"],
+    "homepage": "https://github.com/flaviosenos/routerx",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Flavio Senos",
+            "email": "seu.email@example.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "RouterX\\": "src/RouterX/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
