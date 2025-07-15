@@ -122,8 +122,6 @@ Aplique middlewares às rotas:
 
 
 ~~~php
-=======
->>>>>>> 0ca87ee (Commit inicial)
 $router->post('/api/produtos', [App\Controllers\ProductController::class, 'store'])
        ->addMiddleware(App\Middlewares\AuthMiddleware::class)
        ->addMiddleware(App\Middlewares\LogMiddleware::class);
@@ -134,9 +132,6 @@ Seus controladores recebem objetos Request e Response. Se você passou um motor 
 
 
 ~~~php
-=======
-```php
->>>>>>> 0ca87ee (Commit inicial)
 <?php
 
 namespace App\Controllers;
@@ -195,9 +190,6 @@ class ProductController
 No seu ponto de entrada (public/index.php), chame dispatch().
 
 ~~~php
-=======
-```php
->>>>>>> 0ca87ee (Commit inicial)
 // ... (rotas definidas) ...
 
 // Define um handler para 404 (rota não encontrada)
