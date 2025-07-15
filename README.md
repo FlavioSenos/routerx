@@ -120,7 +120,7 @@ class AuthMiddleware implements MiddlewareInterface
 
 Aplique middlewares às rotas:
 
-<<<<<<< HEAD
+
 ~~~php
 =======
 >>>>>>> 0ca87ee (Commit inicial)
@@ -132,7 +132,7 @@ $router->post('/api/produtos', [App\Controllers\ProductController::class, 'store
 5. Controladores e Interagindo com Request/Response
 Seus controladores recebem objetos Request e Response. Se você passou um motor de templates para o Router, ele será injetado no construtor do seu controlador.
 
-<<<<<<< HEAD
+
 ~~~php
 =======
 ```php
@@ -194,7 +194,6 @@ class ProductController
 6. Despachando a Requisição
 No seu ponto de entrada (public/index.php), chame dispatch().
 
-<<<<<<< HEAD
 ~~~php
 =======
 ```php
@@ -228,20 +227,10 @@ Suporte a Invokable Controllers: Permitir que classes com o método __invoke() s
 
 Testes Automatizados: Expandir a cobertura de testes para garantir a estabilidade e confiabilidade da biblioteca em todas as suas funcionalidades.
 
-<<<<<<< HEAD
 
 ## Contribuição
-
 Contribuições são bem-vindas! Sinta-se à vontade para abrir [issues](https://github.com/flaviosenos/routerx/issues) ou [pull requests](https://github.com/flaviosenos/routerx/pulls) em nosso repositório no GitHub.
 
 
 ## Licença
-
 Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/flaviosenos/routerx/blob/main/LICENSE) para mais detalhes.
-=======
-Contribuição
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests em nosso repositório no GitHub.
-
-Licença
-Este projeto está licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
->>>>>>> 0ca87ee (Commit inicial)
