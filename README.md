@@ -120,7 +120,10 @@ class AuthMiddleware implements MiddlewareInterface
 
 Aplique middlewares às rotas:
 
+<<<<<<< HEAD
 ~~~php
+=======
+>>>>>>> 0ca87ee (Commit inicial)
 $router->post('/api/produtos', [App\Controllers\ProductController::class, 'store'])
        ->addMiddleware(App\Middlewares\AuthMiddleware::class)
        ->addMiddleware(App\Middlewares\LogMiddleware::class);
@@ -129,7 +132,11 @@ $router->post('/api/produtos', [App\Controllers\ProductController::class, 'store
 5. Controladores e Interagindo com Request/Response
 Seus controladores recebem objetos Request e Response. Se você passou um motor de templates para o Router, ele será injetado no construtor do seu controlador.
 
+<<<<<<< HEAD
 ~~~php
+=======
+```php
+>>>>>>> 0ca87ee (Commit inicial)
 <?php
 
 namespace App\Controllers;
@@ -187,7 +194,11 @@ class ProductController
 6. Despachando a Requisição
 No seu ponto de entrada (public/index.php), chame dispatch().
 
+<<<<<<< HEAD
 ~~~php
+=======
+```php
+>>>>>>> 0ca87ee (Commit inicial)
 // ... (rotas definidas) ...
 
 // Define um handler para 404 (rota não encontrada)
@@ -200,24 +211,24 @@ $router->dispatch();
 ~~~
 
 
-## Melhorias Futuras (Roadmap)
-
+Melhorias Futuras (Roadmap)
 RouterX está em constante evolução! Consideramos as seguintes melhorias para o futuro:
 
-* **Nomear Rotas e Geração de URLs:** Permitir que as rotas sejam nomeadas para gerar URLs de forma programática (ex: `Router::url('product.show', ['id' => 123])`), garantindo que os links permaneçam consistentes mesmo se a estrutura da URI mudar.
+Nomear Rotas e Geração de URLs: Permitir que as rotas sejam nomeadas para gerar URLs de forma programática (ex: Router::url('product.show', ['id' => 123])), garantindo que os links permaneçam consistentes mesmo se a estrutura da URI mudar.
 
-* **Asserções de Parâmetros de Rota:** Adicionar suporte para validação de tipos de parâmetros na URI (ex: `/users/{id:\d+}` para garantir que `id` seja um número).
+Asserções de Parâmetros de Rota: Adicionar suporte para validação de tipos de parâmetros na URI (ex: /users/{id:\d+} para garantir que id seja um número).
 
-* **Cache de Rotas:** Implementar um mecanismo de cache para compilar as rotas em produção, otimizando o desempenho e evitando o reprocessamento a cada requisição.
+Cache de Rotas: Implementar um mecanismo de cache para compilar as rotas em produção, otimizando o desempenho e evitando o reprocessamento a cada requisição.
 
-* **Integração com PSR-7/PSR-15:** Adotar os padrões PSR-7 (HTTP Messages) e PSR-15 (HTTP Handlers) para as classes `Request` e `Response`, promovendo maior interoperabilidade com outras bibliotecas e middlewares do ecossistema PHP.
+Integração com PSR-7/PSR-15: Adotar os padrões PSR-7 (HTTP Messages) e PSR-15 (HTTP Handlers) para as classes Request e Response, promovendo maior interoperabilidade com outras bibliotecas e middlewares do ecossistema PHP.
 
-* **Tratamento de Exceções Avançado:** Oferecer um sistema mais robusto para capturar e tratar diferentes tipos de exceções (ex: 405 Method Not Allowed, 403 Forbidden) com handlers específicos.
+Tratamento de Exceções Avançado: Oferecer um sistema mais robusto para capturar e tratar diferentes tipos de exceções (ex: 405 Method Not Allowed, 403 Forbidden) com handlers específicos.
 
-* **Suporte a Invokable Controllers:** Permitir que classes com o método `__invoke()` sejam usadas como handlers de rota.
+Suporte a Invokable Controllers: Permitir que classes com o método __invoke() sejam usadas como handlers de rota.
 
-* **Testes Automatizados:** Expandir a cobertura de testes para garantir a estabilidade e confiabilidade da biblioteca em todas as suas funcionalidades.
+Testes Automatizados: Expandir a cobertura de testes para garantir a estabilidade e confiabilidade da biblioteca em todas as suas funcionalidades.
 
+<<<<<<< HEAD
 
 ## Contribuição
 
@@ -227,3 +238,10 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir [issues](https:/
 ## Licença
 
 Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/flaviosenos/routerx/blob/main/LICENSE) para mais detalhes.
+=======
+Contribuição
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests em nosso repositório no GitHub.
+
+Licença
+Este projeto está licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+>>>>>>> 0ca87ee (Commit inicial)
