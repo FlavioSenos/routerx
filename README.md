@@ -24,10 +24,11 @@ Em um mundo de frameworks complexos, RouterX se destaca pela sua simplicidade e 
 
 ## Instalação
 
-A RouterX é uma biblioteca Composer. Adicione-a ao seu projeto usando:
+RouterX é uma biblioteca de roteamento PHP leve e fácil de usar, projetada para gerenciar as rotas da sua aplicação de forma amigável, com suporte a middlewares, integração com templates e capacidade de atender a APIs RESTful. Ela oferece um controle granular sobre como suas URLs são mapeadas para a lógica da sua aplicação.
 
-```bash
+~~~bash
 composer require flaviosenos/routerx
+~~~
 
 ## Como Usar
 
@@ -35,7 +36,7 @@ composer require flaviosenos/routerx
 
 Crie sua instância do Router e, opcionalmente, configure seu motor de templates (passando-o para o `Router` e depois para os seus controladores).
 
-```php
+~~~php
 <?php
 
 require_once __DIR__ . '/vendor/autoload.php'; // Inclui o autoloader do Composer
@@ -53,12 +54,13 @@ use RouterX\Response;
 $router = new Router();
 // Opcional: Se você usa um motor de templates, pode passá-lo para o Router
 // $router->setTemplateEngine($myTemplateEngine);
+~~~
 
 ### 2. Definindo Rotas
 
 Você pode definir rotas para diferentes métodos HTTP e com parâmetros na URI.
 
-```php
+~~~php
 // Rota GET simples
 $router->get('/', function (Request $request, Response $response) {
     return $response->setContent("Bem-vindo à Home da RouterX!");
@@ -69,12 +71,13 @@ $router->get('/blog/{slug}', [App\Controllers\BlogController::class, 'showPost']
 
 // Rota para API (POST)
 $router->post('/api/pedidos', [App\Controllers\OrderController::class, 'createOrder']);
+~~~
 
 ### 3. Usando Grupos de Rotas
 
 Agrupe rotas com prefixos e middlewares compartilhados.
 
-```php
+~~~php
 $router->group('/admin', function (Router $router) {
     // Rotas dentro de /admin, por exemplo: /admin/dashboard
     $router->get('/dashboard', [App\Controllers\AdminController::class, 'dashboard']);
@@ -83,12 +86,13 @@ $router->group('/admin', function (Router $router) {
     $router->get('/users', [App\Controllers\AdminController::class, 'listUsers'])
            ->addMiddleware(App\Middlewares\AuthMiddleware::class);
 });
+~~~
 
 ### 4. Middlewares
 
 Crie middlewares implementando a `RouterX\Middleware\MiddlewareInterface`.
 
-```php
+~~~php
 <?php
 
 namespace App\Middlewares;
@@ -112,16 +116,20 @@ class AuthMiddleware implements MiddlewareInterface
         return $next($request, $response);
     }
 }
+~~~
 
+Aplique middlewares às rotas:
+
+~~~php
 $router->post('/api/produtos', [App\Controllers\ProductController::class, 'store'])
        ->addMiddleware(App\Middlewares\AuthMiddleware::class)
        ->addMiddleware(App\Middlewares\LogMiddleware::class);
+~~~
 
-### 5. Controladores e Interagindo com Request/Response
+5. Controladores e Interagindo com Request/Response
+Seus controladores recebem objetos Request e Response. Se você passou um motor de templates para o Router, ele será injetado no construtor do seu controlador.
 
-Seus controladores recebem objetos `Request` e `Response`. Se você passou um motor de templates para o Router, ele será injetado no construtor do seu controlador.
-
-```php
+~~~php
 <?php
 
 namespace App\Controllers;
@@ -174,12 +182,12 @@ class ProductController
         ]);
     }
 }
+~~~
 
-### 6. Despachando a Requisição
+6. Despachando a Requisição
+No seu ponto de entrada (public/index.php), chame dispatch().
 
-No seu ponto de entrada (`public/index.php`), chame `dispatch()`.
-
-```php
+~~~php
 // ... (rotas definidas) ...
 
 // Define um handler para 404 (rota não encontrada)
@@ -189,6 +197,8 @@ $router->setNotFoundHandler(function (Request $request, Response $response) {
 
 // Inicia o roteamento
 $router->dispatch();
+~~~
+
 
 ## Melhorias Futuras (Roadmap)
 
@@ -208,9 +218,11 @@ RouterX está em constante evolução! Consideramos as seguintes melhorias para 
 
 * **Testes Automatizados:** Expandir a cobertura de testes para garantir a estabilidade e confiabilidade da biblioteca em todas as suas funcionalidades.
 
+
 ## Contribuição
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir [issues](https://github.com/flaviosenos/routerx/issues) ou [pull requests](https://github.com/flaviosenos/routerx/pulls) em nosso repositório no GitHub.
+
 
 ## Licença
 
