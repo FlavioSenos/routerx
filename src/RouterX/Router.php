@@ -118,8 +118,11 @@ class Router
 
         if ($this->notFoundHandler) {
             ($this->notFoundHandler)($request, $response);
+            $response->send();
+            return;
         } else {
             $response->setStatusCode(404)->setContent("404 - Not Found")->send();
+            return;
         }
     }
 }
